@@ -49,4 +49,37 @@ new_df = pd.DataFrame({"producto": [...], "precio": [...], "cantidad": [...]})
 new_df.head()
 ```
 
----
+
+## 📗 clase_2.py
+
+Introducción profunda a Pandas: Series, DataFrames y exportación de datos.
+
+### Temas:
+- **Series** — creación con índices personalizados
+- **DataFrame** — filtros, selección de columnas, `loc` e `iloc`
+- **Matplotlib** — gráfica de Series
+- **Exportación** — `.csv`, `.html`, `.json`
+
+### Actividad:
+```python
+# Series con índice
+s = pd.Series([2, 4, 6, 8], index=["num1", "num2", "num3", "num4"])
+
+# DataFrame de personas
+personas = {
+    "peso": pd.Series([84, 90, 56, 64], ["Santiago","Pedro","Ana","Julia"]),
+    "altura": pd.Series({"Santiago": 187, "Pedro": 178, "Julia": 170, "Ana": 165}),
+    "hijos": pd.Series([2, 3], ["Pedro", "Julia"])
+}
+df = pd.DataFrame(personas)
+
+# Filtros
+df[df["peso"] > 80]
+df.loc["Ana"]
+df.iloc[1:3]
+
+# Exportar
+df.to_csv("df_personas.csv")
+df.to_html("df_personas.html")
+df.to_json("df_personas.json")
+```
