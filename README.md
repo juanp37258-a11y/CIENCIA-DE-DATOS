@@ -1,4 +1,4 @@
-# 📊 Mi Portafolio de Ciencia de Datos
+i# 📊 Mi Portafolio de Ciencia de Datos
 
 ¡Bienvenido! Soy **Juan Pablo** y aquí comparto mis proyectos y trabajos en ciencia de datos.
 
@@ -97,44 +97,3 @@ python3 poster.py
 
 ---
 
-## 💡 Temas Principales Cubiertos
-
-✅ Análisis Exploratorio de Datos (EDA)
-✅ Manipulación y Limpieza de Datasets
-✅ Visualización de Datos Efectiva
-✅ Estadística Descriptiva
-✅ Introducción a Machine Learning
-✅ Trabajo con Datasets Reales
-✅ Automatización de Reportes
-✅ Dashboards e Indicadores Clave (KPIs)
-
----
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si tienes sugerencias o mejoras:
-
-1. Fork el repositorio
-2. Crea una rama: `git checkout -b feature/mejora`
-3. Commit: `git commit -m 'Agrega mejora'`
-4. Push: `git push origin feature/mejora`
-5. Abre un Pull Request
-
----
-
-## 📧 Contacto
-
-- **GitHub:** [@juanp37258-a11y](https://github.com/juanp37258-a11y)
-- **Email:** juanp37258@gmail.com
-
----
-
-## 📜 Licencia
-
-Este proyecto está bajo la Licencia MIT.
-
----
-
-**Última actualización:** 31 de marzo de 2026
-
-⭐ Si este repositorio te fue útil, ¡considera dejar una estrella!
