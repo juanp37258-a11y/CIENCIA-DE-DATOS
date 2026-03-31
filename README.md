@@ -88,3 +88,25 @@ plt.plot(edad, crecimiento, marker='o', linestyle='-')
 plt.title('Crecimiento a lo largo del tiempo')
 plt.show()
 
+🟦 clase_2.py
+Introducción profunda a Pandas: Series, DataFrames y manipulación de datos tabulares.
+📖 Temas:
+Pandas — instalación y configuración con pyarrow
+Series — creación con índices y valores personalizados
+DataFrame — estructuras de datos tabulares
+Manipulación — filtros, selección de columnas con loc e iloc
+Exportación — guardado de datos en .csv, .html, .json
+⚡ Actividad:
+# 📊 Serie básica de Pandas
+s = pd.Series([2, 4, 6, 8, 10])
+
+# 🗂️ DataFrame de personas
+personas = {
+    "peso":   pd.Series([84, 90, 56, 64]),
+    "altura": pd.Series([187, 170, 160, 155]),
+    "hijos":  pd.Series([2, 3, 1, 0])
+}
+df = pd.DataFrame(personas)
+⚙️ Requisitos:
+pip install pandas pyarrow
+
