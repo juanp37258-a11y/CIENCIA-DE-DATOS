@@ -82,4 +82,32 @@ df.iloc[1:3]
 df.to_csv("df_personas.csv")
 df.to_html("df_personas.html")
 df.to_json("df_personas.json")
+
 ```
+📊 Clase 3 — Introducción a Matplotlib
+Notebook generado en Google Colab como parte del curso de Ciencia de Datos.
+Cubre los fundamentos de visualización de datos con la librería matplotlib.
+📚 Contenido
+1. Instalación e importación
+!pip install matplotlib
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+2. Gráfico de línea básico
+Se grafica una lista de valores simples con plt.plot().
+plt.plot([1, 2, 5, 3, 4, 5, 1])
+plt.show()
+3. Función cuadrática (x²)
+Uso de np.linspace para generar puntos y graficar una parábola.
+x = np.linspace(3, 0, 500)
+y = x**2
+plt.plot(x, y)
+plt.show()
+4. Múltiples funciones en un gráfico
+Se grafican x² y x+1 en la misma figura con leyenda y grilla.
+x = np.linspace(-2, 2, 500)
+plt.plot(x, x**2, 'b--', label="x²")
+plt.plot(x, x+1,  'g',   label="x+1")
+plt.legend()
+plt.grid()
+plt.show()
