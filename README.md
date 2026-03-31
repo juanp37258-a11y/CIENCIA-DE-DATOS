@@ -66,47 +66,24 @@ Aquí encontrarás desde ejercicios prácticos fundamentales hasta análisis com
 - **Jupyter Notebook** — análisis interactivo
 
 ---
+
 🟩 clase_1.py
 Fundamentos de Data Science con Python: arrays, simulaciones y visualización de datos.
-📖 Temas:
+📖 Temas
 NumPy — creación de arrays, matrices y operaciones con np.array, np.eye
 Aleatoriedad — generación de números con np.random.rand y np.random.randint
 Juego de Dados — simulación de tiradas con resultados enteros
 Juego de Cartas — representación de mazos con arrays 2D
 Matplotlib — graficación de vectores, matrices y curvas con variación aleatoria
 Pandas — primeros pasos con Series y DataFrame
-⚡ Actividad:
+⚡ Actividad
 # 🎲 Simulación de dado
 dado = np.random.randint(low=1, high=7)
 
 # 🃏 Mazo de cartas con arrays
 all_cards = np.array([pikas, trebol, diamante, corazon])
 
-# 📈 Curva de crecimiento con variación aleatoria
+# 📈 Curva de crecimiento
 crecimiento = edad * 6 + np.random.randn(len(edad)) * 2
-plt.plot(edad, crecimiento, marker='o', linestyle='-')
-plt.title('Crecimiento a lo largo del tiempo')
+plt.plot(edad, crecimiento, marker='o')
 plt.show()
-
-🟦 clase_2.py
-Introducción profunda a Pandas: Series, DataFrames y manipulación de datos tabulares.
-📖 Temas:
-Pandas — instalación y configuración con pyarrow
-Series — creación con índices y valores personalizados
-DataFrame — estructuras de datos tabulares
-Manipulación — filtros, selección de columnas con loc e iloc
-Exportación — guardado de datos en .csv, .html, .json
-⚡ Actividad:
-# 📊 Serie básica de Pandas
-s = pd.Series([2, 4, 6, 8, 10])
-
-# 🗂️ DataFrame de personas
-personas = {
-    "peso":   pd.Series([84, 90, 56, 64]),
-    "altura": pd.Series([187, 170, 160, 155]),
-    "hijos":  pd.Series([2, 3, 1, 0])
-}
-df = pd.DataFrame(personas)
-⚙️ Requisitos:
-pip install pandas pyarrow
-
