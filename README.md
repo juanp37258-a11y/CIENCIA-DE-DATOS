@@ -118,3 +118,32 @@ df = pd.DataFrame(datos_estatura)
 ```bash
 pip install numpy matplotlib pandas
 ```
+ 🟦 clase_2.py
+
+Introducción profunda a Pandas: Series, DataFrames y manipulación de datos tabulares.
+
+### 📖 Temas
+
+- **Pandas** — instalación y configuración con `pyarrow`
+- **Series** — creación con índices y valores personalizados
+- **DataFrame** — estructuras de datos tabulares con múltiples columnas
+- **Manipulación** — filtros, selección de columnas con `loc` e `iloc`
+- **Exportación** — guardado de datos en `.csv`, `.html`, `.json`
+
+### 📊 Serie básica de Pandas
+
+```python
+s = pd.Series([2, 4, 6, 8, 10])
+```
+
+### 🗂️ DataFrame básico
+
+```python
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [2, 3, 4]})
+```
+
+### ⚙️ Requisitos
+
+```bash
+pip install pandas pyarrow
+```
