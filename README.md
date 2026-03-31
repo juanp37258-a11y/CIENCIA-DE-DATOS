@@ -67,33 +67,4 @@ Aquí encontrarás desde ejercicios prácticos fundamentales hasta análisis com
 
 ---
 
-## 🚀 Cómo Usar Este Repositorio
-
-### Instalación
-
-```bash
-git clone https://github.com/juanp37258-a11y/CIENCIA-DE-DATOS.git
-cd CIENCIA-DE-DATOS
-```
-
-### Instalar Dependencias
-
-```bash
-pip install numpy pandas matplotlib seaborn jupyter
-```
-
-### Ejecutar los Scripts
-
-```bash
-python3 clase_1.py
-python3 clase_2.py
-python3 clase_3.py
-python3 clase_4.py
-python3 clase_5.py
-python3 trabajocustomers.py
-python3 parcial.py
-python3 poster.py
-```
-
----
 
