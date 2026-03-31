@@ -12,28 +12,28 @@ Este repositorio contiene una colección completa de proyectos, scripts y recurs
 
 ### 📚 Clases - Cursos Prácticos
 
-| Archivo | Descripción |
-|---------|-------------|
-| **clase_1.py** | Fundamentos de Data Science: NumPy, Pandas y Matplotlib básico. Introducción a arrays, matrices y gráficas simples. |
-| **clase_2.py** | Manipulación avanzada de datos con Pandas: Series, DataFrames, filtros con loc e iloc, y exportación de datos a CSV, HTML, JSON. |
-| **clase_3.py** | Visualización de datos con Matplotlib: gráficos de línea, histogramas, boxplots y análisis exploratorio visual. |
-| **clase_4.py** | Análisis exploratorio de datos (EDA) avanzado con datasets reales de crédito bancario y visualizaciones con Seaborn. |
-| **clase_5.py** | Temas avanzados: aplicaciones prácticas de ciencia de datos, modelado estadístico y técnicas de predicción. |
+| Archivo           | Descripción                                                                                                               |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------|
+| **clase_1.py**     | Fundamentos de Data Science: NumPy, Pandas y Matplotlib básico. Introducción a arrays, matrices y gráficas simples. Además, se incluyen ejemplos de simulación como un generador de dados y juego de cartas usando NumPy. |
+| **clase_2.py**     | Manipulación avanzada de datos con Pandas: Series, DataFrames, filtros con loc e iloc, y exportación de datos a CSV, HTML, JSON. Incluye creación y manipulación de columnas de DataFrames para cálculos estadísticos básicos. |
+| **clase_3.py**     | Visualización de datos con Matplotlib: gráficos de línea, histogramas, boxplots y análisis exploratorio visual. (Archivo pendiente de recuperación). |
+| **clase_4.py**     | Análisis exploratorio de datos (EDA) avanzado con datasets reales de crédito bancario y visualizaciones con Seaborn. (Archivo pendiente de recuperación). |
+| **clase_5.py**     | Temas avanzados: aplicaciones prácticas de ciencia de datos, modelado estadístico y técnicas de predicción. (Archivo pendiente de recuperación). |
 
 ### 📊 Proyectos y Evaluaciones
 
-| Archivo | Descripción |
-|---------|-------------|
-| **trabajocustomers.py** | Análisis completo de datos de clientes: limpieza, exploración, segmentación y visualización de patrones de comportamiento. |
-| **parcial.py** | Evaluaciones y ejercicios prácticos de los conceptos aprendidos en las clases, con pruebas y validaciones. |
-| **poster.py** | Script para generar visualizaciones de resumen y posters informativos del proyecto con resultados principales. |
+| Archivo                    | Descripción                                                                                                                          |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **trabajocustomers.py**     | Análisis completo de datos de clientes: limpieza, exploración, segmentación y visualización de patrones de comportamiento. El proyecto incluye gráficos avanzados para analizar la mediana y moda de los ingresos por género. |
+| **parcial.py**              | Generación de un dataset sintético de clientes, análisis de correlación entre nivel educativo, salario y aprobación de crédito. Incluye visualizaciones como histogramas y boxplots para explorar outliers y tendencias. |
+| **poster.py**               | Script para generar visualizaciones de resumen y posters informativos del proyecto con resultados principales. (Archivo pendiente de recuperación). |
 
 ### 🎨 Recursos Visuales
 
-| Archivo | Descripción |
-|---------|-------------|
-| **poster.jpeg** | Imagen resumen del proyecto con resultados principales, gráficos y hallazgos clave. |
-| **power_bi.png** | Dashboard interactivo creado en Power BI con análisis visual, KPIs y métricas de negocio. |
+| Archivo        | Descripción                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------|
+| **poster.jpeg** | Imagen resumen del proyecto con resultados principales, gráficos y hallazgos clave.           |
+| **power_bi.png**| Dashboard interactivo creado en Power BI con análisis visual, KPIs y métricas de negocio.      |
 
 ---
 
