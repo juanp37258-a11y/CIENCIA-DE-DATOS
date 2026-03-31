@@ -1,4 +1,4 @@
-# 📊 Mi Proyecto de Data Science
+8# 📊 Mi Proyecto de Data Science
 
 ## 📁 Estructura de archivos
 
@@ -96,18 +96,45 @@ import numpy as np
 2. Gráfico de línea básico
 Se grafica una lista de valores simples con plt.plot().
 plt.plot([1, 2, 5, 3, 4, 5, 1])
-plt.show()
-3. Función cuadrática (x²)
-Uso de np.linspace para generar puntos y graficar una parábola.
-x = np.linspace(3, 0, 500)
-y = x**2
-plt.plot(x, y)
-plt.show()
-4. Múltiples funciones en un gráfico
-Se grafican x² y x+1 en la misma figura con leyenda y grilla.
-x = np.linspace(-2, 2, 500)
-plt.plot(x, x**2, 'b--', label="x²")
-plt.plot(x, x+1,  'g',   label="x+1")
-plt.legend()
-plt.grid()
-plt.show()
+
+📚 Temas:
+📂 Carga de datos — lectura de CSV real con pd.read_csv()
+🔍 Exploración — head(), describe(), info(), isnull().sum()
+📊 Conteo de categorías — value_counts() en género, contrato, ocupación, estado civil
+📈 Histograma — distribución del monto de crédito con línea de media
+📦 Boxplot con Seaborn — crédito por miembros de la familia con paleta viridis
+
+
+📊 clase4.py
+Análisis exploratorio y visualización de datos reales de crédito bancario con Pandas, Matplotlib y Seaborn.
+
+🎯 Objetivos
+Cargar y explorar un dataset real de solicitudes de crédito bancario
+Identificar valores nulos y distribución de variables categóricas
+Visualizar la distribución del monto de crédito con histograma y media
+Analizar el crédito según los miembros del hogar mediante un boxplot
+
+🗂️ Dataset — credit_card.csv
+Columna
+Descripción
+NAME_CONTRACT_TYPE
+Tipo de contrato
+CODE_GENDER
+Género del cliente
+FLAG_OWN_CAR
+Tiene auto propio
+FLAG_OWN_REALTY
+Tiene propiedad
+NAME_INCOME_TYPE
+Tipo de ingreso
+FAMILY_STATUS
+Estado civil
+OCCUPATION_TYPE
+Tipo de ocupación
+FAM_MEMBERS
+Miembros de la familia
+CREDIT
+Monto del crédito
+
+
+
