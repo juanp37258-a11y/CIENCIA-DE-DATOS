@@ -1,4 +1,4 @@
-i# 📊 Mi Portafolio de Ciencia de Datos
+# 📊 Mi Portafolio de Ciencia de Datos
 
 ¡Bienvenido! Soy **Juan Pablo** y aquí comparto mis proyectos y trabajos en ciencia de datos.
 
@@ -76,14 +76,11 @@ Juego de Dados — simulación de tiradas con resultados enteros
 Juego de Cartas — representación de mazos con arrays 2D
 Matplotlib — graficación de vectores, matrices y curvas con variación aleatoria
 Pandas — primeros pasos con Series y DataFrame
-⚡ Actividad
-# 🎲 Simulación de dado
+🎲 Simulación de dado
 dado = np.random.randint(low=1, high=7)
-
-# 🃏 Mazo de cartas con arrays
+🃏 Mazo de cartas con arrays
 all_cards = np.array([pikas, trebol, diamante, corazon])
-
-# 📈 Curva de crecimiento
+📈 Curva de crecimiento
 crecimiento = edad * 6 + np.random.randn(len(edad)) * 2
 plt.plot(edad, crecimiento, marker='o')
 plt.show()
