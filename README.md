@@ -1,4 +1,4 @@
-8# 📊 Mi Proyecto de Data Science
+# 📊 Mi Proyecto de Data Science
 
 ## 📁 Estructura de archivos
 
@@ -6,13 +6,12 @@
 |--------|-------------|
 | `clase_1.py` | Clase 1 |
 | `clase_2.py` | Clase 2 |
-| `clase3.py` | Clase 3 |
-| `clase4.py` | Clase 4 |
-| `clase5.py` | Clase 5 |
+| `clase_3.py` | Clase 3 |
+| `clase_4.py` | Clase 4 |
+| `clase_5.py` | Clase 5 |
 | `trabajocustomers.py` | Análisis de clientes |
 | `poster.jpeg` | Imagen del proyecto |
-| `powe bi.png` | Dashboard Power BI |
-
+| `power_bi.png` | Dashboard Power BI |
 
 
 ## 📘 clase_1.py
@@ -84,57 +83,117 @@ df.to_html("df_personas.html")
 df.to_json("df_personas.json")
 
 ```
-📊 Clase 3 — Introducción a Matplotlib
-Notebook generado en Google Colab como parte del curso de Ciencia de Datos.
-Cubre los fundamentos de visualización de datos con la librería matplotlib.
-📚 Contenido
-1. Instalación e importación
-!pip install matplotlib
-import matplotlib
+
+## 📊 clase_3.py
+
+Introducción a Matplotlib: Visualización de datos con gráficos.
+
+### Temas:
+- **Instalación e importación** — setup de matplotlib y librerías necesarias
+- **Gráficos de línea** — `plt.plot()` y personalización
+- **Carga de datos** — lectura de CSV real con `pd.read_csv()`
+- **Exploración de datos** — `head()`, `describe()`, `info()`, `isnull().sum()`
+- **Conteo de categorías** — `value_counts()` en género, contrato, ocupación, estado civil
+- **Histograma** — distribución del monto de crédito con línea de media
+- **Boxplot con Seaborn** — crédito por miembros de la familia con paleta viridis
+
+### Actividad:
+```python
 import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
-2. Gráfico de línea básico
-Se grafica una lista de valores simples con plt.plot().
+import pandas as pd
+
+# Gráfico de línea básico
 plt.plot([1, 2, 5, 3, 4, 5, 1])
+plt.title('Gráfico de Línea Básico')
+plt.show()
 
-📚 Temas:
-📂 Carga de datos — lectura de CSV real con pd.read_csv()
-🔍 Exploración — head(), describe(), info(), isnull().sum()
-📊 Conteo de categorías — value_counts() en género, contrato, ocupación, estado civil
-📈 Histograma — distribución del monto de crédito con línea de media
-📦 Boxplot con Seaborn — crédito por miembros de la familia con paleta viridis
+# Cargar datos
+df = pd.read_csv('credit_card.csv')
 
+# Exploración
+print(df.head())
+print(df.describe())
+print(df.info())
+print(df.isnull().sum())
 
-📊 clase4.py
-Análisis exploratorio y visualización de datos reales de crédito bancario con Pandas, Matplotlib y Seaborn.
+# Conteo de categorías
+print(df['CODE_GENDER'].value_counts())
+print(df['NAME_CONTRACT_TYPE'].value_counts())
 
-🎯 Objetivos
-Cargar y explorar un dataset real de solicitudes de crédito bancario
-Identificar valores nulos y distribución de variables categóricas
-Visualizar la distribución del monto de crédito con histograma y media
-Analizar el crédito según los miembros del hogar mediante un boxplot
+# Histograma con media
+plt.figure(figsize=(10, 6))
+plt.hist(df['CREDIT'], bins=50, edgecolor='black')
+plt.axvline(df['CREDIT'].mean(), color='red', linestyle='--', label=f'Media: {df["CREDIT"].mean():.0f}')
+plt.title('Distribución del Monto de Crédito')
+plt.xlabel('Monto')
+plt.ylabel('Frecuencia')
+plt.legend()
+plt.show()
+``` 
 
-🗂️ Dataset — credit_card.csv
-Columna
-Descripción
-NAME_CONTRACT_TYPE
-Tipo de contrato
-CODE_GENDER
-Género del cliente
-FLAG_OWN_CAR
-Tiene auto propio
-FLAG_OWN_REALTY
-Tiene propiedad
-NAME_INCOME_TYPE
-Tipo de ingreso
-FAMILY_STATUS
-Estado civil
-OCCUPATION_TYPE
-Tipo de ocupación
-FAM_MEMBERS
-Miembros de la familia
-CREDIT
-Monto del crédito
+## 📙 clase_4.py
 
+Análisis exploratorio y visualización avanzada de datos reales de crédito bancario.
 
+### Temas:
+- **Carga y exploración** — dataset real de solicitudes de crédito bancario
+- **Manejo de valores nulos** — identificación y tratamiento
+- **Distribución de variables categóricas** — análisis de género, contrato, ocupación, estado civil
+- **Visualización con Histograma** — distribución del monto de crédito con línea de media
+- **Boxplot con Seaborn** — análisis de crédito según miembros del hogar
+- **Paletas de color** — uso de viridis y otras paletas
 
+### Dataset — credit_card.csv
+
+| Columna | Descripción |
+|---------|-------------|
+| `NAME_CONTRACT_TYPE` | Tipo de contrato |
+| `CODE_GENDER` | Género del cliente |
+| `FLAG_OWN_CAR` | Tiene auto propio |
+| `FLAG_OWN_REALTY` | Tiene propiedad |
+| `NAME_INCOME_TYPE` | Tipo de ingreso |
+| `FAMILY_STATUS` | Estado civil |
+| `OCCUPATION_TYPE` | Tipo de ocupación |
+| `FAM_MEMBERS` | Miembros de la familia |
+| `CREDIT` | Monto del crédito |
+
+### Actividad:
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Cargar datos
+df = pd.read_csv('credit_card.csv')
+
+# Exploración básica
+print(f"Shape: {df.shape}")
+print(f"Valores nulos:\n{df.isnull().sum()}")
+print(f"\nInfo:\n{df.info()}")
+
+# Análisis de variables categóricas
+print(f"\nGénero:\n{df['CODE_GENDER'].value_counts()}")
+print(f"\nTipo de Contrato:\n{df['NAME_CONTRACT_TYPE'].value_counts()}")
+print(f"\nEstado Civil:\n{df['FAMILY_STATUS'].value_counts()}")
+print(f"\nOcupación:\n{df['OCCUPATION_TYPE'].value_counts()}")
+
+# Histograma del monto de crédito
+plt.figure(figsize=(10, 6))
+plt.hist(df['CREDIT'], bins=50, edgecolor='black', alpha=0.7)
+plt.axvline(df['CREDIT'].mean(), color='red', linestyle='--', linewidth=2, label=f'Media: {df["CREDIT"].mean():.0f}')
+plt.title('Distribución del Monto de Crédito')
+plt.xlabel('Monto ($)')
+plt.ylabel('Frecuencia')
+plt.legend()
+plt.show()
+
+# Boxplot: Crédito por miembros de la familia
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=df, x='FAM_MEMBERS', y='CREDIT', palette='viridis')
+plt.title('Distribución del Crédito por Miembros de la Familia')
+plt.xlabel('Miembros de la Familia')
+plt.ylabel('Monto del Crédito ($)')
+plt.show()
+```
