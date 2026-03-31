@@ -4,7 +4,25 @@
 
 ## 📌 Introducción
 
-Este repositorio contiene una colección completa de proyectos, scripts y recursos relacionados con **Ciencia de Datos**, **Análisis de Información** y **Visualización de Datos**. Aquí encontrarás desde ejercicios prácticos hasta análisis complejos de datasets reales.
+Este repositorio contiene una **colección completa y progresiva de proyectos, scripts educativos y recursos profesionales** relacionados con **Ciencia de Datos**, **Análisis de Información** y **Visualización de Datos**. 
+
+### 🎯 Objetivo del Portafolio
+
+Mi objetivo es documentar y compartir mi trayecto de aprendizaje en ciencia de datos, desde conceptos fundamentales hasta análisis complejos de datasets reales. Este portafolio incluye:
+
+- **5 clases prácticas** (`clase_1.py`, `clase_2.py`, `clase_3.py`, `clase_4.py`, `clase_5.py`) que cubren desde fundamentos hasta temas avanzados
+- **Proyectos evaluados** (`parcial.py`, `trabajocustomers.py`) con análisis reales de datos de clientes
+- **Visualizaciones profesionales** (`poster.py`, `power_bi.png`, `poster.jpeg`) para comunicar resultados efectivamente
+
+### 📚 Contenido Principal
+
+Este repositorio está estructurado en tres pilares:
+
+1. **Formación Académica**: Series de lecciones progresivas en Python aplicadas a ciencia de datos
+2. **Proyectos Prácticos**: Casos reales de análisis de datos con limpieza, exploración y segmentación
+3. **Visualización y Comunicación**: Herramientas para generar dashboards e informes profesionales
+
+Aquí encontrarás desde ejercicios prácticos fundamentales hasta análisis complejos de datasets reales, con énfasis en la **interpretación de resultados** y la **comunicación de insights**.
 
 ---
 
