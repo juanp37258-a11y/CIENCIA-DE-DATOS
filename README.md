@@ -1,21 +1,30 @@
-# Ciencia de Datos
+# Data Science Course
 
-Este es el repositorio para el curso de Ciencia de Datos.
+## Introduction
+This course is designed to provide a comprehensive understanding of data science concepts and techniques. Participants will learn how to analyze, visualize, and interpret data to make informed decisions.
 
-## Contenido
+## Explanation of Activities
+Throughout this course, participants will engage in hands-on activities that will solidify their understanding of data science principles. Activities include:
+- Data collection and preprocessing
+- Exploratory data analysis
+- Implementing machine learning algorithms
+- Data visualization techniques
+- Project presentations
 
-1. Introducción a la Ciencia de Datos
-2. Herramientas de Programación
-3. Análisis de Datos
-4. Visualización de Datos
-5. Modelado Predictivo
+## Course Structure
+The course is structured into the following modules:
+1. **Introduction to Data Science**  
+   Overview of data science and its applications
+2. **Data Manipulation and Analysis**  
+   Tools and techniques for data preprocessing
+3. **Statistical Analysis**  
+   Basics of statistics and its roles in data science
+4. **Machine Learning**  
+   Introduction to machine learning and algorithms
+5. **Data Visualization**  
+   Techniques to visualize data effectively
+6. **Capstone Project**  
+   Real-world project to apply learned skills
 
-### Recursos
-
-- [Kaggle](https://www.kaggle.com/)
-- [Coursera](https://www.coursera.org/) 
-
-### Nota
-
-Este repositorio estará en constante actualización con nuevos recursos y ejemplos.
-
+## Conclusion
+By the end of this course, participants will have developed a solid foundation in data science, preparing them for further studies or professional work in this exciting field.
