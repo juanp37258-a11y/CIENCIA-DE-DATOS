@@ -1,13 +1,10 @@
-# File Structure Description
+# Documentation
 
-## clase_5.py
-This Python script is designed to facilitate the learning process regarding data science concepts and algorithms. The script includes functions that are pertinent to data manipulation and analysis.
+## Introduction
+This repository contains various files related to Data Science projects, including scripts, datasets, and models. Below is a list of all repositories included in this project:
 
-## trabajocustomers.py
-This Python script focuses on processing customer data, including tasks such as data cleaning, analysis, and visualization. It serves as a practical example of data handling using Python.
+- Repository 1: Description of Repository 1
+- Repository 2: Description of Repository 2
+- Repository 3: Description of Repository 3
 
-## poster.jpeg
-This JPEG image serves as a visual representation for the project. It may contain important metrics or findings from the analysis conducted within the repository.
-
-## power_bi.png
-This image showcases a Power BI dashboard that provides insights derived from the data processed in this project. It helps to visualize the results of the data analysis in an interactive manner.
+Feel free to explore the individual repositories for more details on each project.
