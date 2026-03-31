@@ -66,5 +66,25 @@ Aquí encontrarás desde ejercicios prácticos fundamentales hasta análisis com
 - **Jupyter Notebook** — análisis interactivo
 
 ---
+🟩 clase_1.py
+Fundamentos de Data Science con Python: arrays, simulaciones y visualización de datos.
+📖 Temas:
+NumPy — creación de arrays, matrices y operaciones con np.array, np.eye
+Aleatoriedad — generación de números con np.random.rand y np.random.randint
+Juego de Dados — simulación de tiradas con resultados enteros
+Juego de Cartas — representación de mazos con arrays 2D
+Matplotlib — graficación de vectores, matrices y curvas con variación aleatoria
+Pandas — primeros pasos con Series y DataFrame
+⚡ Actividad:
+# 🎲 Simulación de dado
+dado = np.random.randint(low=1, high=7)
 
+# 🃏 Mazo de cartas con arrays
+all_cards = np.array([pikas, trebol, diamante, corazon])
+
+# 📈 Curva de crecimiento con variación aleatoria
+crecimiento = edad * 6 + np.random.randn(len(edad)) * 2
+plt.plot(edad, crecimiento, marker='o', linestyle='-')
+plt.title('Crecimiento a lo largo del tiempo')
+plt.show()
 
