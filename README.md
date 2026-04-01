@@ -414,10 +414,4 @@ DATASET UTILIZADO
 -----------------
   - Archivo: credit_card.csv
   - Columnas relevantes: NAME_CONTRACT_TYPE, CODE_GENDER, FLAG_OWN_CAR,
-    NAME_INCOME_TYPE, FLAG_OWN_REALTY, FAMILY_STATUS, OCCUPATION_TYPE,
-    CREDIT, FAM_MEMBERS
-
-====================================================
-  Archivo generado como documentación del notebook
-  clase4.ipynb - Análisis Exploratorio de Datos
-============================================
+    NAME_INCOME_TYPE, FLAG_OWN_REALTY, FAMILY_STATUS
