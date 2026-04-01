@@ -92,6 +92,129 @@ ax2.set_xlabel("Valor")
 ax2.set_ylabel("Frecuencia")
 ax2.set_title("Bins manuales")
 
+README - CLASE 3: INTRODUCCIÓN A MATPLOTLIB
+====================================================
+
+DESCRIPCIÓN GENERAL
+-------------------
+Este notebook (clase3.ipynb) es una introducción práctica a la librería
+Matplotlib en Python, ejecutada en Google Colab. Cubre la creación de
+distintos tipos de gráficas: líneas, dispersión e histogramas.
+
+----------------------------------------------------
+SECCIONES DEL CÓDIGO
+----------------------------------------------------
+
+1. INSTALACIÓN E IMPORTACIÓN
+   - Se instala e importa matplotlib:
+       pip install matplotlib
+       import matplotlib.pyplot as plt
+   - También se usa numpy para generar datos:
+       import numpy as np
+
+----------------------------------------------------
+
+2. GRÁFICA DE LÍNEA BÁSICA
+   - Se grafica una lista simple de valores:
+       plt.plot([1, 2, 5, 3, 4, 5, 1])
+       plt.show()
+   - Matplotlib conecta los puntos en orden automáticamente.
+
+----------------------------------------------------
+
+3. GRÁFICA CON NUMPY (PARÁBOLA)
+   - Se generan 500 puntos entre 0 y 3 con np.linspace:
+       x = np.linspace(3, 0, 500)
+       y = x**2
+       plt.plot(x, y)
+   - np.linspace crea un arreglo de valores igualmente espaciados.
+
+----------------------------------------------------
+
+4. MÚLTIPLES LÍNEAS, LEYENDA Y GRILLA
+   - Se grafican dos funciones en el mismo plot:
+       plt.plot(x, x**2, 'b--', label="x²")   -> azul, línea punteada
+       plt.plot(x, x+1,  'g',   label="x+1")  -> verde, línea sólida
+       plt.legend()   -> muestra la leyenda
+       plt.grid()     -> activa la cuadrícula
+
+----------------------------------------------------
+
+5. SUBPLOTS (MÚLTIPLES PANELES)
+   - Se crean dos gráficas lado a lado con plt.subplots:
+       fig, ax = plt.subplots(1, 2, figsize=(14, 6))
+       ax[0].plot(x, y, 'r-', linewidth=3)       -> panel izquierdo
+       ax[1].plot(x, y2, 'm--', linewidth=3)     -> panel derecho
+   - Cada panel tiene su propio título y grilla con transparencia:
+       ax[0].set_title("Parábola", fontsize=16)
+       ax[0].grid(alpha=0.3)
+
+----------------------------------------------------
+
+6. GRÁFICA DE DISPERSIÓN (SCATTER)
+   - Se generan puntos aleatorios con numpy:
+       x, y = rand(2, 10)
+       plt.scatter(x, y)
+   - Scatter muestra puntos individuales sin conectarlos.
+   
+   - Versión con dos grupos de 100 puntos y colores distintos:
+       x, y   = rand(2, 100)  -> grupo azul
+       x2, y2 = rand(2, 100)  -> grupo verde
+       plt.scatter(x, y, c='blue')
+       plt.scatter(x2, y2, c='green')
+
+----------------------------------------------------
+
+7. HISTOGRAMAS
+   - Un histograma muestra la distribución de frecuencias de los datos.
+   
+   Primer ejemplo con bins automáticos y personalizados:
+       data = [1, 1.3, 1.5, 2, 2, 0.2, 3, 3, 3, 3]
+       ax1.hist(data, bins=10, ...)              -> 10 intervalos automáticos
+       ax2.hist(data, bins=[1, 3, 3, 2.5, 3], ...)  -> intervalos manuales
+   
+   Segundo ejemplo más limpio:
+       data = [2, 2.3, 2.8, 3, 3.5, 4.1, 4, 4, 5, 5.2, 5.8, 6]
+       ax1.hist(data, bins=8, ...)               -> 8 bins automáticos
+       ax2.hist(data, bins=[2, 3, 4, 5, 6], ...) -> bins manuales exactos
+   
+   Parámetros usados:
+       bins      -> cantidad o bordes de los intervalos
+       rwidth    -> ancho relativo de las barras (0 a 1)
+       color     -> color de relleno
+       edgecolor -> color del borde de las barras
+
+----------------------------------------------------
+
+8. GUARDAR GRÁFICA EN ARCHIVO
+   - Se guarda la gráfica como imagen PNG:
+       fig.savefig("mi_grafica.png", transparent=True)
+   - transparent=True hace que el fondo sea transparente.
+
+----------------------------------------------------
+
+CONCEPTOS CLAVE APRENDIDOS
+---------------------------
+  * plt.plot()        -> Gráfica de línea
+  * plt.scatter()     -> Gráfica de dispersión
+  * plt.hist()        -> Histograma
+  * plt.legend()      -> Leyenda de series
+  * plt.grid()        -> Cuadrícula de fondo
+  * plt.subplots()    -> Múltiples paneles en una figura
+  * ax.set_title()    -> Título de un panel
+  * ax.set_xlabel/ylabel() -> Etiquetas de ejes
+  * plt.tight_layout() -> Ajuste automático de espaciado
+  * fig.savefig()     -> Guardar figura como archivo
+
+----------------------------------------------------
+
+DEPENDENCIAS REQUERIDAS
+-----------------------
+  - Python 3.x
+  - matplotlib
+  - numpy
+
+
 plt.tight_layout()
 plt.show()
 
