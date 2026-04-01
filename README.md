@@ -1,4 +1,4 @@
-7# 📊 Mi Portafolio de Ciencia de Datos
+# 📊 Mi Portafolio de Ciencia de Datos
 
 ¡Bienvenido! Soy **Juan Pablo** y aquí comparto mis proyectos y trabajos en ciencia de datos.
 
@@ -118,7 +118,7 @@ df = pd.DataFrame(datos_estatura)
 ```bash
 pip install numpy matplotlib pandas
 
-# 🟦 clase_2.py
+### 🟦 clase_2.py
 
 Introducción profunda a Pandas: Series, DataFrames y manipulación de datos tabulares.
 
@@ -414,12 +414,10 @@ DATASET UTILIZADO
 -----------------
   - Archivo: credit_card.csv
   - Columnas relevantes: NAME_CONTRACT_TYPE, CODE_GENDER, FLAG_OWN_CAR,
-    NAME_INCOME_TYPE, FLAG_OWN_REALTY, FAMILY_STATUS
+    NAME_INCOME_TYPE
 
-===================================================
-  README - CLASE 5: ESTADÍSTICA DESCRIPTIVA Y
-           VISUALIZACIÓN DE DATOS (RRHH)
-====================================================
+ #### README - CLASE 5: ESTADÍSTICA DESCRIPTIVA Y
+           VISUALIZACIÓN 
 
 DESCRIPCIÓN GENERAL
 -------------------
