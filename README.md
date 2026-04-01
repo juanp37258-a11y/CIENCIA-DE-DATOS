@@ -270,3 +270,154 @@ DEPENDENCIAS REQUERIDAS
   - numpy
 
 ```
+README - CLASE 4: ANÁLISIS EXPLORATORIO DE DATOS
+====================================================
+
+DESCRIPCIÓN GENERAL
+-------------------
+Este notebook (clase4.ipynb) trabaja con un dataset real de tarjetas de
+crédito (credit_card.csv) y aplica técnicas de exploración, limpieza y
+visualización de datos usando Pandas, Matplotlib y Seaborn.
+
+----------------------------------------------------
+SECCIONES DEL CÓDIGO
+----------------------------------------------------
+
+1. CARGA DEL DATASET
+   - Se carga un archivo CSV con datos de clientes de crédito:
+       data = pd.read_csv("/content/credit_card.csv", on_bad_lines='skip')
+   - on_bad_lines='skip' ignora filas con errores de formato en lugar
+     de detener la ejecución.
+
+----------------------------------------------------
+
+2. EXPLORACIÓN INICIAL DEL DATAFRAME
+   
+   data.head()
+   -> Muestra las primeras 5 filas del dataset.
+   
+   data.describe()
+   -> Estadísticas descriptivas de columnas numéricas:
+      count, mean, std, min, max, percentiles 25/50/75.
+   
+   data.info()
+   -> Resumen del DataFrame: tipos de datos, cantidad de valores
+      no nulos y uso de memoria.
+   
+   data['NAME_CONTRACT_TYPE'].info()
+   -> Información específica de una sola columna.
+
+----------------------------------------------------
+
+3. ANÁLISIS DE VALORES NULOS
+   
+   data.isnull()
+   -> Tabla de True/False indicando dónde hay valores nulos.
+   
+   data.isnull().sum()
+   -> Cuenta los valores nulos por columna — útil para decidir
+      qué columnas necesitan limpieza.
+
+----------------------------------------------------
+
+4. CONTEO DE VALORES CATEGÓRICOS (value_counts)
+   - Se analiza la distribución de las siguientes columnas:
+   
+       NAME_CONTRACT_TYPE  -> Tipo de contrato (ej: cash, revolving)
+       CODE_GENDER         -> Género del cliente
+       FLAG_OWN_CAR        -> Si posee automóvil (Y/N)
+       NAME_INCOME_TYPE    -> Tipo de ingreso (empleado, pensionado, etc.)
+       FLAG_OWN_REALTY     -> Si posee propiedad (Y/N)
+       FAMILY_STATUS       -> Estado civil / familiar
+       OCCUPATION_TYPE     -> Tipo de ocupación
+   
+   - value_counts() devuelve cuántas veces aparece cada valor único,
+     ordenado de mayor a menor frecuencia.
+
+----------------------------------------------------
+
+5. HISTOGRAMA DE CRÉDITO CON LÍNEA DE MEDIA
+   
+   - Se convierte la columna CREDIT a numérico:
+       data['CREDIT'] = pd.to_numeric(data['CREDIT'], errors='coerce')
+     * errors='coerce' convierte valores no numéricos en NaN.
+   
+   - Se grafica la distribución del monto de crédito:
+       plt.hist(data['CREDIT'], bins=10, color='blue', rwidth=0.7)
+   
+   - Se calcula y traza la línea de la media:
+       promedio = data['CREDIT'].mean()
+       plt.axvline(promedio, color='red', linestyle='dashed', linewidth=2,
+                   label=f'Media: {promedio:.2f}')
+   
+   - plt.axvline() dibuja una línea vertical en el valor indicado.
+   - f'Media: {promedio:.2f}' formatea el número con 2 decimales.
+   - plt.xticks(rotation=40) rota las etiquetas del eje X para legibilidad.
+
+----------------------------------------------------
+
+6. BOXPLOT CON SEABORN
+   - Se visualiza la distribución del crédito agrupada por cantidad
+     de miembros familiares.
+   
+   Configuración:
+       sns.set_theme(style="ticks")   -> Estilo de fondo con marcas
+       plt.figure(figsize=(12, 6))    -> Tamaño del lienzo
+   
+   Boxplot:
+       sns.boxplot(
+           data=data,
+           x='FAM_MEMBERS',    -> Eje X: grupos por miembros familiares
+           y='CREDIT',         -> Eje Y: monto del crédito
+           hue='FAM_MEMBERS',  -> Color distinto por grupo
+           palette="viridis",  -> Paleta de colores
+           legend=False,       -> Oculta la leyenda (redundante con hue)
+           medianprops={"color": "yellow", "linewidth": 2}  -> Mediana amarilla
+       )
+   
+   - Un boxplot muestra: mínimo, Q1, mediana, Q3, máximo y valores atípicos.
+   
+   Ajustes finales:
+       sns.despine(offset=10, trim=True) -> Elimina bordes del gráfico
+       plt.ticklabel_format(style='plain', axis='y')
+       -> Evita notación científica en el eje Y (ej: 1000000 en lugar de 1e6)
+
+----------------------------------------------------
+
+CONCEPTOS CLAVE APRENDIDOS
+---------------------------
+  * pd.read_csv()           -> Carga de archivos CSV
+  * on_bad_lines='skip'     -> Omitir filas con errores
+  * .head()                 -> Vista previa del dataset
+  * .describe()             -> Estadísticas descriptivas
+  * .info()                 -> Tipos y nulos por columna
+  * .isnull().sum()         -> Conteo de valores nulos
+  * .value_counts()         -> Frecuencia de valores categóricos
+  * pd.to_numeric(errors='coerce') -> Conversión segura a número
+  * plt.axvline()           -> Línea vertical en gráfico
+  * sns.boxplot()           -> Diagrama de caja con Seaborn
+  * sns.despine()           -> Limpieza visual del gráfico
+  * ticklabel_format()      -> Formato de etiquetas numéricas
+
+----------------------------------------------------
+
+DEPENDENCIAS REQUERIDAS
+-----------------------
+  - Python 3.x
+  - pandas
+  - matplotlib
+  - seaborn
+
+----------------------------------------------------
+
+DATASET UTILIZADO
+-----------------
+  - Archivo: credit_card.csv
+  - Columnas relevantes: NAME_CONTRACT_TYPE, CODE_GENDER, FLAG_OWN_CAR,
+    NAME_INCOME_TYPE, FLAG_OWN_REALTY, FAMILY_STATUS, OCCUPATION_TYPE,
+    CREDIT, FAM_MEMBERS
+
+====================================================
+  Archivo generado como documentación del notebook
+  clase4.ipynb - Análisis Exploratorio de Datos
+============================================
