@@ -415,3 +415,163 @@ DATASET UTILIZADO
   - Archivo: credit_card.csv
   - Columnas relevantes: NAME_CONTRACT_TYPE, CODE_GENDER, FLAG_OWN_CAR,
     NAME_INCOME_TYPE, FLAG_OWN_REALTY, FAMILY_STATUS
+
+===================================================
+  README - CLASE 5: ESTADÍSTICA DESCRIPTIVA Y
+           VISUALIZACIÓN DE DATOS (RRHH)
+====================================================
+
+DESCRIPCIÓN GENERAL
+-------------------
+Este notebook (clase5.ipynb) trabaja con un dataset sintético de 1000
+empleados generado con NumPy. Se aplican técnicas de estadística
+descriptiva (media, mediana, cuartiles, IQR) y se visualizan con
+Matplotlib y Seaborn para analizar edad, salario y desempeño.
+
+----------------------------------------------------
+SECCIONES DEL CÓDIGO
+----------------------------------------------------
+
+1. CONFIGURACIÓN INICIAL
+   - Se importan las librerías principales:
+       pandas, numpy, matplotlib.pyplot, seaborn
+   
+   - Se configura el estilo global de Seaborn:
+       sns.set_theme(style='whitegrid', palette='deep')
+       plt.rcParams['figure.figsize'] = (10, 8)
+
+----------------------------------------------------
+
+2. GENERACIÓN DEL DATASET SINTÉTICO
+   - Se usa np.random.seed(42) para reproducibilidad. La semilla fija
+     el generador pseudoaleatorio y garantiza los mismos resultados
+     cada vez que se ejecuta el código.
+   
+   - Se crea un DataFrame con 1000 empleados y estas columnas:
+   
+       ID_Empleado       -> Número del 1 al 1000
+       Departamento      -> Elegido aleatoriamente con probabilidades:
+                            Ingeniería 50%, Ventas 30%, Marketing 15%, Directivos 5%
+       Edad              -> Distribución normal: media=34, std=8
+       Años_Experiencia  -> Normal: media=8, std=4, recortada entre 0 y 40
+       Puntaje_desempeño -> Normal: media=75, std=12, recortada entre 0 y 100
+   
+   Métodos usados:
+       np.random.choice()     -> Selección aleatoria con probabilidades (p=[...])
+       np.random.normal()     -> Distribución normal (media, desviación estándar, n)
+       .clip(min, max)        -> Recorta valores fuera del rango especificado
+       .astype(int)           -> Convierte a entero
+       .round(1)              -> Redondea a 1 decimal
+
+----------------------------------------------------
+
+3. VISUALIZACIONES INICIALES (GRILLA 2x2)
+   - Se usa plt.subplots(2, 2) para crear 4 gráficas en un solo panel:
+   
+       [0,0] Barras         -> Empleados por departamento (value_counts + bar)
+       [0,1] Histograma     -> Distribución de edad (20 bins, color coral)
+       [1,0] Scatter        -> Experiencia vs Puntaje de desempeño (alpha=0.5)
+       [1,1] Boxplot        -> Desempeño por departamento (df.boxplot)
+   
+   - plt.tight_layout() ajusta automáticamente el espaciado entre paneles.
+
+----------------------------------------------------
+
+4. VALORES ATÍPICOS EN SALARIO (OUTLIERS)
+   - Se agregan salarios extremos a 5 directivos seleccionados al azar:
+       outlier_idx = df_hr[df_hr['Departamento'] == 'Directivos'].sample(5).index
+       df_hr.loc[outlier_idx, 'Salario_USD'] = [1500000, 2800000, 320000, 190000, 450000]
+   
+   - Esto simula una situación real donde altos ejecutivos distorsionan
+     la media salarial del conjunto.
+   
+   - Se calcula y compara media vs mediana:
+       media_salario    -> Afectada por los outliers (más alta)
+       mediana_salario  -> Más representativa del empleado típico
+
+----------------------------------------------------
+
+5. DISTRIBUCIÓN DE SALARIOS: MEDIA VS MEDIANA
+   - Se reconstruye el dataset completo con columna Salario_USD generada
+     con distribución normal: media=5000, std=2000, recortada [1000, 30000]
+   
+   - Se filtra datos para el gráfico:
+       datos = df_hr[df_hr['Salario_USD'] < 35000]
+   
+   - sns.histplot con kde=True agrega una curva de densidad suavizada
+     sobre el histograma.
+   
+   - Se trazan dos líneas verticales:
+       plt.axvline(media_salario,   color='red',   linestyle='--')
+       plt.axvline(mediana_salario, color='green', linestyle='-')
+   
+   - La diferencia visual entre ambas líneas ilustra el efecto de los
+     valores extremos sobre la media.
+
+----------------------------------------------------
+
+6. MEDIDAS DE TENDENCIA CENTRAL Y DISPERSIÓN (EDAD)
+   - Se calculan los estadísticos clave de la columna Edad:
+   
+       Q1  = quantile(0.25)       -> Cuartil 1 (25% de los datos)
+       Q3  = quantile(0.75)       -> Cuartil 3 (75% de los datos)
+       IQR = Q3 - Q1              -> Rango intercuartílico
+       lim_sup = Q3 + 1.5 * IQR  -> Límite superior para outliers
+       lim_inf = Q1 - 1.5 * IQR  -> Límite inferior para outliers
+   
+   - Valores fuera de [lim_inf, lim_sup] se consideran atípicos (regla de Tukey).
+   
+   - El boxplot se complementa con líneas verticales que marcan:
+       Q1, Q3, Mediana, Media, Límite superior e inferior
+
+----------------------------------------------------
+
+7. BOXPLOTS POR DEPARTAMENTO
+   - Se generan tres boxplots comparativos usando sns.boxplot:
+   
+       Edad por Departamento
+       -> figsize=(30,40), ylim=(0,70)
+       -> Permite ver si hay diferencias de edad entre áreas
+   
+       Salario_USD por Departamento
+       -> figsize=(30,40), ylim=(0,200000)
+       -> El área Directivos mostrará outliers extremos
+   
+       Puntaje_desempeño por Departamento
+       -> figsize=(12,6), paleta de colores por área
+       -> Se agregan líneas horizontales con axhline() para la
+          media y mediana globales como referencia de comparación
+
+----------------------------------------------------
+
+CONCEPTOS CLAVE APRENDIDOS
+---------------------------
+  * np.random.seed()         -> Reproducibilidad de datos aleatorios
+  * np.random.normal()       -> Generación de distribución normal
+  * .clip()                  -> Limitar valores a un rango
+  * .quantile()              -> Cálculo de cuartiles
+  * IQR                      -> Rango intercuartílico (dispersión)
+  * Regla de Tukey           -> Detección de outliers con 1.5 * IQR
+  * Media vs Mediana         -> Efecto de outliers en cada medida
+  * sns.histplot(kde=True)   -> Histograma con curva de densidad
+  * plt.axvline/axhline()    -> Líneas de referencia en gráficos
+  * sns.boxplot()            -> Diagrama de caja por grupos
+  * plt.subplots(2, 2)       -> Grilla de múltiples gráficas
+
+----------------------------------------------------
+
+DEPENDENCIAS REQUERIDAS
+-----------------------
+  - Python 3.x
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+
+----------------------------------------------------
+
+DATASET UTILIZADO
+-----------------
+  - Dataset sintético generado en el mismo notebook con seed=42
+  - 1000 empleados, columnas: ID_Empleado, Departamento, Edad,
+    Años_Experiencia, Puntaje_desempeño, Salario_USD
