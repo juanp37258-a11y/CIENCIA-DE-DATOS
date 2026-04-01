@@ -117,8 +117,8 @@ df = pd.DataFrame(datos_estatura)
 
 ```bash
 pip install numpy matplotlib pandas
-```
- 🟦 clase_2.py
+
+# 🟦 clase_2.py
 
 Introducción profunda a Pandas: Series, DataFrames y manipulación de datos tabulares.
 
